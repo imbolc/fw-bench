@@ -1,0 +1,5 @@
+{% for col in row %}
+    <td><a href="{{ reverse_url('table', col['row'], col['col']) }}">
+        {{ col['row'] }}:{{ col['col'] }}
+    </a></td>    
+{% end %}

@@ -7,7 +7,7 @@ import subprocess
 import prettytable
 
 
-FRAMEWORKS = ['bottle', 'django', 'flask', 'pysi']
+FRAMEWORKS = ['bottle', 'django', 'flask', 'pysi', 'tornado']
 BENCHMARKS = [
     {
         'name': 'hello',
@@ -52,7 +52,7 @@ def run_bench(bench):
 
 def parse_result(output):
     rps = output.split('Requests per second:')[1].strip().split(' ')[0]
-    return float(rps)
+    return int(float(rps))
 
 
 if __name__ == '__main__':
