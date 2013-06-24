@@ -1,0 +1,7 @@
+bottle
+django
+flask
+pysi
+
+gevent
+prettytable
