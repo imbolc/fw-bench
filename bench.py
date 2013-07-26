@@ -7,7 +7,14 @@ import subprocess
 import prettytable
 
 
-FRAMEWORKS = ['bottle', 'django', 'flask', 'pysi', 'tornado']
+FRAMEWORKS = [
+    {'name': 'bottle',  'run': ['./run.py']},
+    {'name': 'django',  'run': ['./run.py']},
+    {'name': 'flask',   'run': ['./run.py']},
+    {'name': 'pysi',    'run': ['./run.py']},
+    {'name': 'tornado', 'run': ['./run.py']},
+    {'name': 'express', 'run': ['node', 'app.js']},
+]
 BENCHMARKS = [
     {
         'name': 'hello',
@@ -27,9 +34,9 @@ BENCHMARKS = [
 
 
 def run_server(fw, bench):
-    print ('starting server: %s ...' % fw),
-    os.chdir('%s_app' % fw)
-    process = subprocess.Popen(['./run.py'])
+    print ('starting server: %s ...' % fw['name']),
+    os.chdir('%s_app' % fw['name'])
+    process = subprocess.Popen(fw['run'])
     while True:
         time.sleep(1)
         r = urllib.urlopen(bench['url'])
@@ -59,7 +66,7 @@ if __name__ == '__main__':
     table = prettytable.PrettyTable(['benchmark / framework'] +
             [b['name'] for b in BENCHMARKS])
     for fw in FRAMEWORKS:
-        cols = [fw]
+        cols = [fw['name']]
         for bench in BENCHMARKS:
             print 'starting bench: %(name)s ...' % bench
             server = run_server(fw, bench)

@@ -1,0 +1,5 @@
+<% row.forEach(function(col) { %>
+  <td><a href="<%= url4('table', { row: col.row, col: col.col }) %>">
+      <%= col.row %>:<%= col.col %>
+  </a></td>    
+<% }); %>
