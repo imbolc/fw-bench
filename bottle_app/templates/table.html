@@ -1,5 +1,7 @@
 <table border=1>
-{% for row in rows %}
-    <tr>{% include "templates/table_row.html" %}</tr>
-{% endfor %}
+% for row in rows:
+  <tr>
+    % include('table_row.html')
+  </tr>
+% end
 </table>

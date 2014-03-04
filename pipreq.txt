@@ -1,4 +1,4 @@
-bottle
+-e git+git@github.com:defnull/bottle.git#egg=bottle
 django
 flask
 pysi
