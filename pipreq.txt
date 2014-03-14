@@ -1,8 +1,9 @@
--e git+git@github.com:defnull/bottle.git#egg=bottle
+bottle
 django
 flask
 pysi
 tornado
+jingo
 
 gevent
 prettytable

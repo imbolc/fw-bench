@@ -10,6 +10,7 @@ import prettytable
 FRAMEWORKS = [
     {'name': 'bottle',  'run': ['./run.py']},
     {'name': 'django',  'run': ['./run.py']},
+    {'name': 'django_jinja',  'run': ['./run.py']},
     {'name': 'flask',   'run': ['./run.py']},
     {'name': 'pysi',    'run': ['./run.py']},
     {'name': 'tornado', 'run': ['./run.py']},
